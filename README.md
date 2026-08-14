@@ -1,16 +1,20 @@
-
+<div align="center">
 
 # ObjectDetectionPractice
 
+<p>
+  <img src="https://img.shields.io/badge/Python-3.14.5-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
+  <img src="https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=flat-square&logo=huggingface&logoColor=black" />
+  <img src="https://img.shields.io/badge/Models-DETR%20%7C%20Deformable%20DETR%20%7C%20YOLOv5s-8A2BE2?style=flat-square" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
+</p>
 
+<p>基于 PyTorch + HuggingFace 的目标检测模型实战系列</p>
+<p>以 <b>Transformer 端到端检测 → 可变形注意力加速 → 单阶段实时检测</b> 为主线，循序渐进覆盖目标检测核心技术栈</p>
+<p>每个 Notebook 均配有详细中文注释，适合目标检测入门与进阶学习</p>
 
-基于 PyTorch + HuggingFace 的目标检测模型实战系列
-
-以 **Transformer 端到端检测 → 可变形注意力加速 → 单阶段实时检测** 为主线，循序渐进覆盖目标检测核心技术栈
-
-每个 Notebook 均配有详细中文注释，适合目标检测入门与进阶学习
-
-
+</div>
 
 ---
 
