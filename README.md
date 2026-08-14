@@ -60,6 +60,7 @@ ObjectDetectionPractice/
 │   └── ultralytics_yolov5_master/        # [自动生成] YOLOv5 仓库缓存（Notebook 03）
 │
 ├── 🤖 yolov5s.pt                         # YOLOv5s 预训练权重（Notebook 03）（gitignored）
+├── 📄 requirements.txt
 ├── 📄 .gitignore
 ├── 📄 LICENSE
 └── 📄 README.md
