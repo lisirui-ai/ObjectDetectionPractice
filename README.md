@@ -116,15 +116,15 @@ ObjectDetectionPractice/
 
 > `03.YOLOv5s_ModelArchitecture_TorchHub.ipynb`
 
-通过 `torch.hub` 加载 **YOLOv5s** 并逐层解析 Backbone / Neck / Head 完整架构，结合官方架构图对照每一层的模块类型、空间尺寸变化与跳连关系。Backbone（CSP-Darknet，层 0~9）以 C3 残差模块 + SPPF 提取多尺度特征；Neck（FPN + PAN，层 10~23）自顶向下融合高层语义、自底向上融合定位细节；Head（Detect，层 24）在 P3/P4/P5 三个尺度各输出 `3×(5+80)=255` 通道预测，最终经 NMS 得到检测框。
+通过 `torch.hub` 加载 **YOLOv5s** 并逐层解析 Backbone / Neck / Head 完整架构，结合官方架构图对照每一层的模块类型、空间尺寸变化与跳连关系。Backbone（CSP-Darknet，层 0–9）以 C3 残差模块 + SPPF 提取多尺度特征；Neck（FPN + PAN，层 10–23）自顶向下融合高层语义、自底向上融合定位细节；Head（Detect，层 24）在 P3/P4/P5 三个尺度各输出 `3×(5+80)=255` 通道预测，最终经 NMS 得到检测框。
 
 
 | 章节                  | 内容                                                                                          |
 | ------------------- | ------------------------------------------------------------------------------------------- |
 | 模型环境准备与加载           | `torch.hub.load` 加载 `ultralytics/yolov5` · 权重缓存重定向到 `model_cache/` · AutoShape 封装说明   |
 | 整体架构概览              | Input / Backbone / Neck / Head 四区块划分 · 层索引与架构图对应关系速查表 · 跳连来源标注                          |
-| Backbone 主干网络（层 0~9） | Conv(k=6,s=2,p=2) → P1/2 · C3(n=1/2/3) 残差模块 · P3/P4/P5 跳连输出 · SPPF(k=5) 空间金字塔池化      |
-| Neck 特征融合网络（层 10~23）| FPN 自顶向下（Upsample + Concat + C3）· PAN 自底向上（Conv 下采样 + Concat + C3）· 双路径特征融合          |
+| Backbone 主干网络（层 0–9） | Conv(k=6,s=2,p=2) → P1/2 · C3(n=1/2/3) 残差模块 · P3/P4/P5 跳连输出 · SPPF(k=5) 空间金字塔池化      |
+| Neck 特征融合网络（层 10–23）| FPN 自顶向下（Upsample + Concat + C3）· PAN 自底向上（Conv 下采样 + Concat + C3）· 双路径特征融合          |
 | Head 检测头（层 24）       | Detect 层三尺度（P3/8·P4/16·P5/32） · 每头 1×1 Conv 输出 255 通道 · `3×(5+80)` 解释                  |
 | 推理示例                | AutoShape 端到端推理 · letterbox 缩放 · NMS 过滤 · 检测结果打印与保存                                     |
 
@@ -150,8 +150,8 @@ Transformer 端到端检测层
        ↓
 单阶段实时检测层
   03 YOLOv5s（CSP-Darknet Backbone + FPN+PAN Neck + Detect Head）
-     ├── Backbone (层 0~9)：C3 残差 + SPPF 空间金字塔
-     ├── Neck (层 10~23)：FPN 自顶向下 + PAN 自底向上
+     ├── Backbone (层 0–9)：C3 残差 + SPPF 空间金字塔
+     ├── Neck (层 10–23)：FPN 自顶向下 + PAN 自底向上
      └── Head (层 24)：P3/P4/P5 三尺度 Detect，NMS 后处理
 ```
 
